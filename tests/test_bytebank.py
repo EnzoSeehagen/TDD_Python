@@ -15,4 +15,15 @@ class TestClass:
         assert resultado == esperado
 
 
+    def test_quando_nome_recebe_enzo_seehagen_deve_retornar_seehagen(self):
+
+        entrada = "Enzo Seehagen"
+        esperado = "Seehagen"
+
+        funcionario_teste = Funcionario(entrada, "31/05/2000", 2000)
+
+        resultado = funcionario_teste.sobrenome()
+
+        assert resultado == esperado
+
 
