@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Funcionario:
     def __init__(self, nome, data_nascimento, salario):
         self._nome = nome
@@ -33,3 +34,22 @@ class Funcionario:
 
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'
+
+    def _eh_um_dos_socios(self):
+        sobrenomes = ["Araujo", "Fernandes", "Seehagen"]
+        if (self._salario >= 100000) and (self.sobrenome() in sobrenomes):
+            return True
+        else:
+            return False
+
+
+
+    def reajuste(self):
+        if self._eh_um_dos_socios:
+            decrecimo = self._salario * 0.1
+            self._salario = self.salario - decrecimo
+
+    def acrecimo(self):
+        if self._salario >= 10000:
+            acrecimo = self._salario * 0.1
+            self._salario = self._salario + acrecimo
